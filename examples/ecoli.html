@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<title>E. Coli pangenome analysis | Metagenomic-DeepFRI 1.0 documentation</title>
+<link href="../_static/pygments.css" rel="stylesheet"/>
+<link href="../_static/theme.e6081a2fb60dd7bf7015.css" rel="stylesheet"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../contributing.html" rel="next" title="Contributing"/>
+<link href="index.html" rel="prev" title="Examples"/>
+</head>
+<body class="antialiased text-gray scroll-smooth">
+<div class="h-screen xl:grid xl:grid-layout" data-action="keydown@window-&gt;search#focus" data-controller="sidebar search" id="page">
+<a class="block text-xl bg-white py-4 z-20 absolute top-0 h-14 inset-x-0 text-center transform -translate-y-full focus:translate-y-0 focus:outline-none transition-transform duration-75" href="#em-e-coli-em-pangenome-analysis" title="Skip navigation links">Skip to content</a>
+<header class="grid-area-header z-10 h-14">
+<div class="bg-gray-dark shadow-md flex items-center h-full xl:px-2 relative"><div class="flex items-center">
+<button class="xl:hidden h-14 w-14 leading-14 text-gray-100 hover:bg-gray-700 hover:text-brand focus:outline-none focus:bg-gray-700 focus:text-brand" data-action="sidebar#open" data-sidebar-target="hamburger">
+<span class="sr-only">Open navigation menu</span>
+<svg aria-hidden="true" class="fill-current h-8 w-8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
+</button><a aria-label="Back to homepage" class="hover:bg-gray-700 focus:bg-gray-700 focus:outline-none tooltipped tooltipped-sw" href="../index.html"><span class="hidden lg:inline-block shrink-0 font-medium text-gray-100 mx-5 leading-14 tracking-wider">Metagenomic-DeepFRI 1.0 documentation</span>
+</a></div><div class="flex justify-end items-center flex-1"><form action="../search.html" class="flex print:hidden justify-between items-center leading-14 md:ml-4 bg-gray-dark text-gray-300 focus-within:bg-gray-50 focus-within:text-gray-800 focus-within:absolute focus-within:inset-x-0 focus-within:top-0 md:focus-within:w-full md:focus-within:static" data-action="click-&gt;search#focusSearchInput" id="searchbox" method="get">
+<button aria-label="Get search results" class="text-inherit h-14 w-14" tabindex="-1">
+<svg aria-hidden="true" class="fill-current stroke-current h-8 w-8" stroke-width="0.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+</button>
+<input aria-label="Search the docs" class="pr-2 bg-transparent text-inherit focus:outline-none w-0 md:w-auto focus:w-full transition-all duration-100" data-search-target="searchInput" id="search-input" name="q" placeholder="Search the docs" type="search"/>
+</form></div>
+</div>
+</header>
+<aside class="grid-area-sidebar h-full fixed xl:relative inset-y-0 left-0 z-20 xl:z-0 print:hidden overflow-y-auto transition-all transform transform-gpu -translate-x-full opacity-0 duration-300 xl:translate-x-0 xl:opacity-100" data-sidebar-target="sidebar">
+<nav class="h-full overflow-y-auto bg-white text-gray-600 pt-8 flex flex-col" role="navigation">
+<div class="nav-toc flex-1 pl-6"><p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="../installation.html">Installation</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="../installation.html#local">Local</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="../installation.html#quick-start">Quick start</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="../installation.html#linux">Linux</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="../installation.html#macos">MacOS</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="../installation.html#docker">Docker</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="../deepfri.html">What is DeepFRI?</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="../deepfri.html#model-overview">Model overview</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="../deepfri.html#pretrained-lstm">Pretrained LSTM</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="../deepfri.html#graph-neural-network">Graph neural network</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="../deepfri.html#performance">Performance</a></div></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using Metagenomic-DeepFRI</span></p>
+<ul>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="../usage.html">How the pipeline works</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="../usage.html#projects">Projects</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="../usage.html#tasks-and-timestamps">Tasks and timestamps</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="../usage.html#set-up-database">Set up database</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="../usage.html#running-the-main-pipeline">Running the main pipeline</a></div></li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="../output.html">Output</a></div></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Use cases</span></p>
+<ul class="current">
+<li class="toctree-l1 current expanded"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="index.html">Examples</a></div><ul class="current">
+<li class="toctree-l2 current expanded"><div class="nav-link"><a class="current reference internal" data-action="click-&gt;sidebar#close" href="#"><em>E. Coli</em> pangenome analysis</a></div></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="../contributing.html">Contributing</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="../contributing.html#bug-reports-and-feature-requests">Bug reports and feature requests</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="../contributing.html#code-improvement">Code improvement</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="../contributing.html#use-case-reporting">Use-case reporting</a></div></li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="../references.html">References</a></div></li>
+</ul>
+</div>
+<button class="text-4xl text-gray-800 p-4 bottom-0 hover:text-brand xl:hidden focus:text-brand self-center" data-action="sidebar#close" title="Close navigation menu">
+<span class="sr-only">Close navigation menu</span>
+<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</aside>
+<main class="px-4 xl:ml-fluid grid-area-main overflow-y-auto flex flex-col h-full mx-0 md:mx-auto xl:mr-0" data-controller="scroll"><nav aria-label="breadcrumbs" class="print:hidden mt-12 text-sm text-gray-light" role="navigation">
+<a class="text-gray-light text-sm hover:text-gray-dark font-medium focus:text-gray-dark" href="../index.html">Metagenomic-DeepFRI 1.0 documentation</a>
+<span class="mr-1">/</span><a class="text-gray-light text-sm hover:text-gray-dark" href="index.html">Examples</a>
+<span class="mr-1">/</span><span aria-current="page"><em>E. Coli</em> pangenome analysis</span>
+</nav>
+<article class="flex-1" role="main">
+<section id="e-coli-pangenome-analysis">
+<h1><em>E. Coli</em> pangenome analysis<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#e-coli-pangenome-analysis">¶</a></h1>
+<p>To test our tool, we decided to annotate <em>Escherichia Coli</em> pangenome. <em>Escherichia Coli</em> is a well-studied
+bacterial species. It is a facultative anaerobic, Gram-negative, rod-shaped bacterium abundant in human gut
+microbiome. It colonizes the gut within hours after birth and coexist with human throughout whole life<a class="footnote-reference brackets" href="#footcite-kaper-2004" id="id1">1</a>.
+It also may exhibit pathogenic properties if it acquires virulence factors.
+We used a pipeline that consists of <a class="reference external" href="https://huttenhower.sph.harvard.edu/kneaddata/" rel="nofollow noopener">kneaddata<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>,
+<code class="docutils literal notranslate">MegaHIT</code><a class="footnote-reference brackets" href="#footcite-li-2015" id="id2">2</a>, <code class="docutils literal notranslate">MetaBAT2</code><a class="footnote-reference brackets" href="#footcite-kang-2019" id="id3">3</a>, <code class="docutils literal notranslate">CheckM</code><a class="footnote-reference brackets" href="#footcite-parks-2015" id="id4">4</a>,
+and <code class="docutils literal notranslate">GTDB-tk</code><a class="footnote-reference brackets" href="#footcite-chaumeil-2019" id="id5">5</a>, for assembly, quality control, taxonomical annotation of
+metagenome-assembled genomes (MAGs). We used <code class="docutils literal notranslate">Prodigal</code><a class="footnote-reference brackets" href="#footcite-hyatt-2010" id="id6">6</a> to predict genes and clustered
+sequences by 95% similarity and 90% alignment coverage using <code class="docutils literal notranslate">CD-HIT</code><a class="footnote-reference brackets" href="#footcite-fu-2012" id="id7">7</a> to generate
+non-redundant gene catalogue. This procedure yielded 11,813 protein sequences.</p>
+<p>Metagenomic-DeepFRI uses 2 inputs: <strong>protein sequence</strong> and <strong>protein structure</strong>. As we obtained the protein sequences
+in the previous step, we still do not have the protein structure. Luckily, after running  <code class="docutils literal notranslate">update_target_mmseqs_database.py</code>
+the pipeline takes care of it. It searches for the similar sequence in supplied database using Bit-score. If similar sequences
+exists in database, it sends the structure as the input to a graph-convolutional neural network (GCN). If there is no such sequence,
+the prediction is made with help of convolutional neural network (CNN).</p>
+<p>We tested the influence of database on the DeepFRI predictions. We used the following databases:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.rcsb.org/" rel="nofollow noopener">PDB<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p></li>
+<li><p><a class="reference external" href="https://alphafold.ebi.ac.uk/" rel="nofollow noopener">AlphaFold2<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p></li>
+<li><p>Rosetta</p></li>
+</ol>
+<figure class="align-default" id="id9">
+<a class="reference internal image-reference" href="../_images/inference_time.png"><img alt="Metagenomic-DeepFRI inference" src="../_images/inference_time.png" style="width: 800px;"/></a>
+<figcaption><span class="caption-text">Figure 1. (left) The amount of predictions made by GCN with respect to reference database.
+(right) The time elapsed for a single prediction.</span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id9">¶</a>
+</figcaption>
+</figure>
+<p>Next, we took a closer look on predicted GO terms. We excluded predictions with confidence &lt; 0.2.
+We compared predictions with and without structural input.</p>
+<p>We defined <strong>informative GO terms</strong> that satisfy the following parameters:</p>
+<ol class="arabic simple">
+<li><p>Terms that are associated with more than k=2,000 proteins</p></li>
+<li><p>Rach of their descendant term contains less than 2,000 proteins (k=2,000 equates to approximately 1 of every 5,000 UniRef50 protein families).</p></li>
+</ol>
+<table class="colwidths-given docutils align-default" id="id10">
+<caption><span class="caption-text">Method</span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#id10">¶</a></caption>
+<colgroup>
+<col style="width: 45%"/>
+<col style="width: 27%"/>
+<col style="width: 27%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>No structural input</p></th>
+<th class="head"><p>PDB + AF2 + Rosetta</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>No. unfiltered GO terms</p></td>
+<td><p>11,726 (99%)</p></td>
+<td><p>7,219 (61%)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Informative GO terms</p></td>
+<td><p>2,016 (17%)</p></td>
+<td><p>3,012 (25%)</p></td>
+</tr>
+</tbody>
+</table>
+<p>The number of total predicted GO terms decreased, but the number of informative GO terms increased.</p>
+<p class="rubric">References</p>
+<div class="docutils container" id="id8">
+<dl class="footnote brackets">
+<dt class="label" id="footcite-kaper-2004"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>James B. Kaper, James P. Nataro, and Harry L. T. Mobley. Pathogenic escherichia coli. <em>Nature Reviews Microbiology</em>, 2(2):123–140, Feb 2004. URL: <a class="reference external" href="https://doi.org/10.1038/nrmicro818" rel="nofollow noopener">https://doi.org/10.1038/nrmicro818<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>, <a class="reference external" href="https://doi.org/10.1038/nrmicro818" rel="nofollow noopener">doi:10.1038/nrmicro818<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>.</p>
+</dd>
+<dt class="label" id="footcite-li-2015"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Dinghua Li, Chi-Man Liu, Ruibang Luo, Kunihiko Sadakane, and Tak-Wah Lam. MEGAHIT: an ultra-fast single-node solution for large and complex metagenomics assembly via succinct de Bruijn graph. <em>Bioinformatics</em>, 31(10):1674–1676, 01 2015. URL: <a class="reference external" href="https://doi.org/10.1093/bioinformatics/btv033" rel="nofollow noopener">https://doi.org/10.1093/bioinformatics/btv033<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>, <a class="reference external" href="https://arxiv.org/abs/https://academic.oup.com/bioinformatics/article-pdf/31/10/1674/17085710/btv033.pdf" rel="nofollow noopener">arXiv:https://academic.oup.com/bioinformatics/article-pdf/31/10/1674/17085710/btv033.pdf<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>, <a class="reference external" href="https://doi.org/10.1093/bioinformatics/btv033" rel="nofollow noopener">doi:10.1093/bioinformatics/btv033<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>.</p>
+</dd>
+<dt class="label" id="footcite-kang-2019"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>Dongwan Kang, Feng Li, Edward S Kirton, Ashleigh Thomas, Rob S Egan, Hong An, and Zhong Wang. MetaBAT 2: an adaptive binning algorithm for robust and efficient genome reconstruction from metagenome assemblies. <em>PeerJ</em>, February 2019.</p>
+</dd>
+<dt class="label" id="footcite-parks-2015"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dd><p>Donovan H Parks, Michael Imelfort, Connor T Skennerton, Philip Hugenholtz, and Gene W Tyson. CheckM: assessing the quality of microbial genomes recovered from isolates, single cells, and metagenomes. <em>Genome Res.</em>, 25(7):1043–1055, July 2015.</p>
+</dd>
+<dt class="label" id="footcite-chaumeil-2019"><span class="brackets"><a class="fn-backref" href="#id5">5</a></span></dt>
+<dd><p>Pierre-Alain Chaumeil, Aaron J Mussig, Philip Hugenholtz, and Donovan H Parks. GTDB-Tk: a toolkit to classify genomes with the genome taxonomy database. <em>Bioinformatics</em>, November 2019.</p>
+</dd>
+<dt class="label" id="footcite-hyatt-2010"><span class="brackets"><a class="fn-backref" href="#id6">6</a></span></dt>
+<dd><p>Doug Hyatt, Gwo-Liang Chen, Philip F Locascio, Miriam L Land, Frank W Larimer, and Loren J Hauser. Prodigal: prokaryotic gene recognition and translation initiation site identification. <em>BMC Bioinformatics</em>, 11(1):119, March 2010.</p>
+</dd>
+<dt class="label" id="footcite-fu-2012"><span class="brackets"><a class="fn-backref" href="#id7">7</a></span></dt>
+<dd><p>Limin Fu, Beifang Niu, Zhengwei Zhu, Sitao Wu, and Weizhong Li. CD-HIT: accelerated for clustering the next-generation sequencing data. <em>Bioinformatics</em>, 28(23):3150–3152, December 2012.</p>
+</dd>
+</dl>
+</div>
+</section>
+</article>
+<footer>
+<div class="mt-20 mb-4 text-sm text-gray-700">© 2022, Metagenomic-DeepFRI team Made with <a href="https://www.sphinx-doc.org">Sphinx 4.4.0</a></div>
+</footer></main>
+<button class="fixed bottom-0 right-0 z-20 opacity-0 p-4 m-4 tracking-wide bg-gray-900 text-gray-100 transition transform transform-gpu duration-500 translate-y-full" data-action="search#hideSnackbar" data-search-target="snackbar">
+  Clear highlights
+</button><div class="fixed hidden inset-0 bg-black bg-opacity-50" data-action="click-&gt;sidebar#close" data-sidebar-target="screen">
+</div>
+</div>
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/theme.a9d041328d1560cbc665.js"></script>
+</body>
+</html>

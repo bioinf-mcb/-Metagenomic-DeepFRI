@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<title>How the pipeline works | Metagenomic-DeepFRI 1.0 documentation</title>
+<link href="_static/pygments.css" rel="stylesheet"/>
+<link href="_static/theme.e6081a2fb60dd7bf7015.css" rel="stylesheet"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="output.html" rel="next" title="Output"/>
+<link href="deepfri.html" rel="prev" title="What is DeepFRI?"/>
+</head>
+<body class="antialiased text-gray scroll-smooth">
+<div class="h-screen xl:grid xl:grid-layout" data-action="keydown@window-&gt;search#focus" data-controller="sidebar search" id="page">
+<a class="block text-xl bg-white py-4 z-20 absolute top-0 h-14 inset-x-0 text-center transform -translate-y-full focus:translate-y-0 focus:outline-none transition-transform duration-75" href="#how-the-pipeline-works" title="Skip navigation links">Skip to content</a>
+<header class="grid-area-header z-10 h-14">
+<div class="bg-gray-dark shadow-md flex items-center h-full xl:px-2 relative"><div class="flex items-center">
+<button class="xl:hidden h-14 w-14 leading-14 text-gray-100 hover:bg-gray-700 hover:text-brand focus:outline-none focus:bg-gray-700 focus:text-brand" data-action="sidebar#open" data-sidebar-target="hamburger">
+<span class="sr-only">Open navigation menu</span>
+<svg aria-hidden="true" class="fill-current h-8 w-8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
+</button><a aria-label="Back to homepage" class="hover:bg-gray-700 focus:bg-gray-700 focus:outline-none tooltipped tooltipped-sw" href="index.html"><span class="hidden lg:inline-block shrink-0 font-medium text-gray-100 mx-5 leading-14 tracking-wider">Metagenomic-DeepFRI 1.0 documentation</span>
+</a></div><div class="flex justify-end items-center flex-1"><form action="search.html" class="flex print:hidden justify-between items-center leading-14 md:ml-4 bg-gray-dark text-gray-300 focus-within:bg-gray-50 focus-within:text-gray-800 focus-within:absolute focus-within:inset-x-0 focus-within:top-0 md:focus-within:w-full md:focus-within:static" data-action="click-&gt;search#focusSearchInput" id="searchbox" method="get">
+<button aria-label="Get search results" class="text-inherit h-14 w-14" tabindex="-1">
+<svg aria-hidden="true" class="fill-current stroke-current h-8 w-8" stroke-width="0.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+</button>
+<input aria-label="Search the docs" class="pr-2 bg-transparent text-inherit focus:outline-none w-0 md:w-auto focus:w-full transition-all duration-100" data-search-target="searchInput" id="search-input" name="q" placeholder="Search the docs" type="search"/>
+</form></div>
+</div>
+</header>
+<aside class="grid-area-sidebar h-full fixed xl:relative inset-y-0 left-0 z-20 xl:z-0 print:hidden overflow-y-auto transition-all transform transform-gpu -translate-x-full opacity-0 duration-300 xl:translate-x-0 xl:opacity-100" data-sidebar-target="sidebar">
+<nav class="h-full overflow-y-auto bg-white text-gray-600 pt-8 flex flex-col" role="navigation">
+<div class="nav-toc flex-1 pl-6"><p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html">Installation</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#local">Local</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#quick-start">Quick start</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#linux">Linux</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#macos">MacOS</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#docker">Docker</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="deepfri.html">What is DeepFRI?</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="deepfri.html#model-overview">Model overview</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="deepfri.html#pretrained-lstm">Pretrained LSTM</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="deepfri.html#graph-neural-network">Graph neural network</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="deepfri.html#performance">Performance</a></div></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using Metagenomic-DeepFRI</span></p>
+<ul class="current">
+<li class="toctree-l1 current expanded"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="current reference internal" data-action="click-&gt;sidebar#close" href="#">How the pipeline works</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#projects">Projects</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#tasks-and-timestamps">Tasks and timestamps</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#set-up-database">Set up database</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#running-the-main-pipeline">Running the main pipeline</a></div></li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="output.html">Output</a></div></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Use cases</span></p>
+<ul>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="examples/index.html">Examples</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="examples/ecoli.html"><em>E. Coli</em> pangenome analysis</a></div></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="contributing.html">Contributing</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="contributing.html#bug-reports-and-feature-requests">Bug reports and feature requests</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="contributing.html#code-improvement">Code improvement</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="contributing.html#use-case-reporting">Use-case reporting</a></div></li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="references.html">References</a></div></li>
+</ul>
+</div>
+<button class="text-4xl text-gray-800 p-4 bottom-0 hover:text-brand xl:hidden focus:text-brand self-center" data-action="sidebar#close" title="Close navigation menu">
+<span class="sr-only">Close navigation menu</span>
+<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</aside>
+<main class="px-4 xl:ml-fluid grid-area-main overflow-y-auto flex flex-col h-full mx-0 md:mx-auto xl:mr-0" data-controller="scroll"><nav aria-label="breadcrumbs" class="print:hidden mt-12 text-sm text-gray-light" role="navigation">
+<a class="text-gray-light text-sm hover:text-gray-dark font-medium focus:text-gray-dark" href="index.html">Metagenomic-DeepFRI 1.0 documentation</a>
+<span class="mr-1">/</span><span aria-current="page">How the pipeline works</span>
+</nav>
+<article class="flex-1" role="main">
+<section id="how-the-pipeline-works">
+<h1>How the pipeline works<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#how-the-pipeline-works">¶</a></h1>
+<p>The main feature of this project is the ability to generate a query contact map on the run
+using results from <code class="docutils literal notranslate">mmseqs2</code> target database search for similar protein sequences within known structures. In <code class="docutils literal notranslate">metagenomic_deepfri.py</code> contact map alignment (implemented in CPP_lib/load_contact_maps.h) is performed to be later used as an input to DeepFRI GCN.</p>
+<p>A pipeline is built around following folder structure:</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">python</span></div>
+<div class="highlight"><pre><code><span class="n">DATA_ROOT</span> <span class="o">=</span> <span class="n">data_root</span>
+<span class="c1"># pipeline folders</span>
+<span class="n">STRUCTURE_FILES_PATH</span> <span class="o">=</span> <span class="n">data_root</span> <span class="o">/</span> <span class="s2">"structure_files"</span>
+<span class="n">QUERY_PATH</span> <span class="o">=</span> <span class="n">data_root</span> <span class="o">/</span> <span class="s2">"query"</span>
+<span class="n">WORK_PATH</span> <span class="o">=</span> <span class="n">data_root</span> <span class="o">/</span> <span class="s2">"workspace"</span>
+<span class="n">FINISHED_PATH</span> <span class="o">=</span> <span class="n">data_root</span> <span class="o">/</span> <span class="s2">"finished"</span>
+
+<span class="c1"># database folders</span>
+<span class="n">SEQ_ATOMS_DATASET_PATH</span> <span class="o">=</span> <span class="n">data_root</span> <span class="o">/</span> <span class="s2">"seq_atoms_dataset"</span>
+<span class="n">MMSEQS_DATABASES_PATH</span> <span class="o">=</span> <span class="n">data_root</span> <span class="o">/</span> <span class="s2">"mmseqs_db"</span>
+
+<span class="c1"># deepfri config file path</span>
+<span class="n">DEEPFRI_MODEL_WEIGHTS_JSON_FILE</span> <span class="o">=</span> <span class="n">data_root</span> <span class="o">/</span> <span class="s2">"trained_models/model_config.json"</span>
+</code></pre></div></div>
+<section id="projects">
+<h2>Projects<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#projects">¶</a></h2>
+<p>Project is a basic unit of workflow. It helps to avoid confusion from multiple pipeline runs.</p>
+<p>Multiple users can have their separate <strong>projects</strong> - subdirectories inside <code class="docutils literal notranslate">STRUCTURE_FILES_PATH</code>, <code class="docutils literal notranslate">QUERY_PATH</code>, <code class="docutils literal notranslate">WORK_PATH</code> and <code class="docutils literal notranslate">FINISHED_PATH</code>. This allows to avoid set up of multiple databases locally, as they require a lot of physical memory.
+You can execute <code class="docutils literal notranslate">main_pipeline.py</code> or <code class="docutils literal notranslate">update_target_mmseqs_database.py</code> with <code class="docutils literal notranslate">--project_name</code> to easily control the files it works with.</p>
+<p><strong>Without specifying <code class="docutils literal notranslate">--project_name</code> pipeline will use <code class="docutils literal notranslate">default</code> as a project name.</strong></p>
+</section>
+<section id="tasks-and-timestamps">
+<h2>Tasks and timestamps<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#tasks-and-timestamps">¶</a></h2>
+<p>The task is a single run of <code class="docutils literal notranslate">main_pipeline.py</code>. The task name is the timestamp at the beginning of the script run. Its path is <code class="docutils literal notranslate">WORK_PATH / project_name / timestamp</code>. After completion, results will be stored in <code class="docutils literal notranslate">FINISHED_PATH / project_name / timestamp</code>.</p>
+<p>When running <code class="docutils literal notranslate">main_pipeline.py</code> with a new project name, the current state of <code class="docutils literal notranslate">CONFIG / RUNTIME_PARAMETERS.py</code> will be saved in <code class="docutils literal notranslate">WORK_PATH / project_name / project_config.json</code> and will be used in all upcoming tasks in this project.</p>
+</section>
+<section id="set-up-database">
+<h2>Set up database<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#set-up-database">¶</a></h2>
+<p><strong>Create a new database:</strong></p>
+<ol class="arabic">
+<li><p>Upload structure files to <code class="docutils literal notranslate">STRUCTURE_FILES_PATH / your_project_name</code>.</p></li>
+<li><p>Run <code class="docutils literal notranslate">update_target_mmseqs_database.py</code> script.</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>python update_target_mmseqs_database.py --project_name your_project_name
+</code></pre></div></div>
+</li>
+</ol>
+<p>The script will search for structure files, process them and store protein chain sequence and atoms positions inside <code class="docutils literal notranslate">SEQ_ATOMS_DATASET_PATH / project_name</code>.
+It will also create a <code class="docutils literal notranslate">mmseqs2</code> database in <code class="docutils literal notranslate">MMSEQS_DATABASES_PATH / project_name</code>. If the script is run for the second time it will append new structures to existing ones, creating a new folder named as a timestep. It would also store a <code class="docutils literal notranslate">MAX_TARGET_CHAIN_LENGTH</code> parameter inside <code class="docutils literal notranslate">target_db_config.json</code>.</p>
+<p>Use <code class="docutils literal notranslate">--input DIR_1 FILE_2 ...</code> argument list to parse structures from multiple sources. It accepts both absolute and relative <code class="docutils literal notranslate">STRUCTURE_FILES_PATH</code> paths.
+Use <code class="docutils literal notranslate">--input .</code> to parse all structure files inside <code class="docutils literal notranslate">STRUCTURE_FILES_PATH</code>.
+Accepted formats are: <code class="docutils literal notranslate">[".pdb", ".cif", ".ent"]</code> both raw and compressed <code class="docutils literal notranslate">".gz"</code></p>
+<p>To add another structure file format edit <code class="docutils literal notranslate">STRUCTURE_FILES_PARSERS</code> inside <code class="docutils literal notranslate">update_target_mmseqs_database.py</code></p>
+<p>Protein ID is used as a filename. A new protein whose ID already exists in the database will be skipped.
+Use <code class="docutils literal notranslate">--overwrite</code> flag to overwrite existing sequences and atoms positions.
+Use this argument if you want to apply changes to <code class="docutils literal notranslate">MAX_TARGET_CHAIN_LENGTH</code> inside <code class="docutils literal notranslate">target_db_config.json</code></p>
+</section>
+<section id="running-the-main-pipeline">
+<h2>Running the main pipeline<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#running-the-main-pipeline">¶</a></h2>
+<ol class="arabic">
+<li><p>Upload <code class="docutils literal notranslate">.faa</code> files into <code class="docutils literal notranslate">QUERY_PATH / your_project_name</code> (default <code class="docutils literal notranslate">project_name</code> is <code class="docutils literal notranslate">default</code>)</p></li>
+<li><p>Run main_pipeline.py</p>
+<div class="code-wrapper" data-controller="code">
+<div class="code-header">
+<span class="code-lang">bash</span></div>
+<div class="highlight"><pre><code>python main_pipeline.py --project_name your_project_name
+</code></pre></div></div>
+</li>
+<li><p>Collect results from <code class="docutils literal notranslate">FINISHED_PATH / your_project_name / timestamp</code></p></li>
+</ol>
+<p>The pipeline will attempt to use <code class="docutils literal notranslate">project_name</code> target database name. If it’s missing, the default target database will be used instead.
+If you want to use another target database, use its name (project_name used during database creation) in <code class="docutils literal notranslate">--target_db_name</code>.</p>
+<p>Use <code class="docutils literal notranslate">--input DIR_1 FILE_2 ...</code> argument list to process query <code class="docutils literal notranslate">.faa</code> files from multiple sources.
+Both absolute and relative to <code class="docutils literal notranslate">QUERY_PATH</code>.
+Use <code class="docutils literal notranslate">--input .</code> to process all query <code class="docutils literal notranslate">.faa</code> files inside <code class="docutils literal notranslate">QUERY_PATH</code>.</p>
+<p><code class="docutils literal notranslate">--delete_query</code> Use this flag so that source query files are deleted from input paths after being copied to the project workspace.</p>
+<p><code class="docutils literal notranslate">--n_parallel_jobs</code> will divide query protein sequences evenly across all jobs.</p>
+</section>
+</section>
+</article>
+<footer>
+<div class="mt-20 mb-4 text-sm text-gray-700">© 2022, Metagenomic-DeepFRI team Made with <a href="https://www.sphinx-doc.org">Sphinx 4.4.0</a></div>
+</footer></main>
+<button class="fixed bottom-0 right-0 z-20 opacity-0 p-4 m-4 tracking-wide bg-gray-900 text-gray-100 transition transform transform-gpu duration-500 translate-y-full" data-action="search#hideSnackbar" data-search-target="snackbar">
+  Clear highlights
+</button><div class="fixed hidden inset-0 bg-black bg-opacity-50" data-action="click-&gt;sidebar#close" data-sidebar-target="screen">
+</div>
+</div>
+<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+<script src="_static/jquery.js"></script>
+<script src="_static/underscore.js"></script>
+<script src="_static/doctools.js"></script>
+<script src="_static/theme.a9d041328d1560cbc665.js"></script>
+</body>
+</html>
