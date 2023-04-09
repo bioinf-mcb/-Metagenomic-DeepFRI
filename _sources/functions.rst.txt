@@ -2,7 +2,7 @@
 Functions
 =========
 
-Metagenomic-DeepFRI contains 
+Metagenomic-DeepFRI contains
 
 .. currentmodule:: meta_deepFRI.utils.utils
 

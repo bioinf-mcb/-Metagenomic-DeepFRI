@@ -1,7 +1,7 @@
 # How the pipeline works
 
 The main feature of this project is the ability to generate a query contact map on the run
-using results from `mmseqs2` target database search for similar protein sequences within known structures. In `metagenomic_deepfri.py` contact map alignment (implemented in CPP_lib/load_contact_maps.h) is performed to be later used as an input to DeepFRI GCN. 
+using results from `mmseqs2` target database search for similar protein sequences within known structures. In `metagenomic_deepfri.py` contact map alignment (implemented in CPP_lib/load_contact_maps.h) is performed to be later used as an input to DeepFRI GCN.
 
 A pipeline is built around following folder structure:
 
@@ -21,7 +21,7 @@ MMSEQS_DATABASES_PATH = data_root / "mmseqs_db"
 DEEPFRI_MODEL_WEIGHTS_JSON_FILE = data_root / "trained_models/model_config.json"
 ```
 
-## Projects 
+## Projects
 Project is a basic unit of workflow. It helps to avoid confusion from multiple pipeline runs.
 
 Multiple users can have their separate **projects** - subdirectories inside `STRUCTURE_FILES_PATH`, `QUERY_PATH`, `WORK_PATH` and `FINISHED_PATH`. This allows to avoid set up of multiple databases locally, as they require a lot of physical memory.

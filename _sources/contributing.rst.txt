@@ -1,10 +1,10 @@
 Contributing
 ============
 
-Hi, thank you for visiting this page. The development of the open source software is comlicated and demanding. 
-Users during their tests would be able to highlight our pitfalls and improve on them. 
+Hi, thank you for visiting this page. The development of the open source software is comlicated and demanding.
+Users during their tests would be able to highlight our pitfalls and improve on them.
 People who contributed to the project would be added to the list of **co-authors on the upcoming paper**.
-**How to do it?** Here's a quick guideline: 
+**How to do it?** Here's a quick guideline:
 
 Bug reports and feature requests
 ********************************
@@ -32,14 +32,14 @@ Use-case reporting
 ******************
 
 **You solved an intresting problem using our software? Or you benchmarked Metagenomic-DeepFRI against other software?**
-Collect the figures and do a little write up about it. The report should be written in Markdown. 
+Collect the figures and do a little write up about it. The report should be written in Markdown.
 When it's finished, please follow this workflow:
 
 1. Visit original `Metagenomic-DeepFRI repository on GitHub <https://github.com/bioinf-mcb/Metagenomic-DeepFRI>`_
 2. Fork the repository to your profile
 3. Place the report in the ``docs/source/examples`` folder
 4. Add your figures to ``docs/source/examples/figures`` folder
-5. Embed figures in text - check links. 
+5. Embed figures in text - check links.
 6. Modify ``docs/source/examples/index.rst`` adding the new report to a ``.. toctree::``
 7. Commit changes
 8. Open a pull request

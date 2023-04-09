@@ -45,4 +45,4 @@ References
    * - `MMseqs2 <https://github.com/soedinglab/mmseqs2>`_
      - Steinegger M and Söding J 2017. `MMseqs2 enables sensitive protein sequence searching for the analysis of massive data sets <https://arxiv.org/abs/1603.04467?>`_. *Nature Biotechnology*, 35, 1026-1028.
    * - `Boost.Python <https://github.com/soedinglab/mmseqs2>`_
-     - 
+     -

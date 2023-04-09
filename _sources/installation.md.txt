@@ -6,7 +6,7 @@
 **Requirements:**
 
 1. Python >= 3.9
-2. Git 
+2. Git
 
 
 **Installation:**
@@ -31,7 +31,7 @@ python main_pipeline.py --input all
 **Requirements:**
 
 1. Python >= 3.9
-2. Git 
+2. Git
 
 **Installation:**
 1. Clone the repository
@@ -60,7 +60,7 @@ python post_setup.py
 **Requirements:**
 
 1. Python >= 3.9
-2. Git 
+2. Git
 
 **Installation:**
 1. Clone the repository
@@ -92,12 +92,12 @@ nano CONFIG/FOLDER_STRUCTURE.py
 python post_setup.py
 ```
 
-### Docker 
+### Docker
 
 **Requirements:**
 
 1. Python >= 3.9
-2. Git 
+2. Git
 3. Docker
 
 **Installation:**
