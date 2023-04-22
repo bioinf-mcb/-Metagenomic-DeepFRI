@@ -6,17 +6,17 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta charset="utf-8"/>
 <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
-<title>Output | Metagenomic-DeepFRI 1.0 documentation</title>
+<title>Results | Metagenomic-DeepFRI 1.0 documentation</title>
 <link href="_static/pygments.css" rel="stylesheet"/>
 <link href="_static/theme.9297a650d9dd3016d913.css" rel="stylesheet"/>
 <link href="search.html" rel="search" title="Search"/>
 <link href="genindex.html" rel="index" title="Index"/>
 <link href="examples/index.html" rel="next" title="Examples"/>
-<link href="usage.html" rel="prev" title="How the pipeline works"/>
+<link href="usage.html" rel="prev" title="Usage"/>
 </head>
 <body class="antialiased text-gray scroll-smooth">
 <div class="min-h-screen xl:h-screen flex flex-col xl:grid xl:grid-layout print:block print:h-auto" data-action="keydown@window-&gt;search#focus " data-controller="sidebar search " id="page">
-<a class="block transition -translate-x-full focus:translate-x-0 opacity-0 focus:opacity-100 text-xl bg-white p-4 z-20 absolute top-0 left-0 h-14" href="#output" title="Skip navigation links">Skip to content</a>
+<a class="block transition -translate-x-full focus:translate-x-0 opacity-0 focus:opacity-100 text-xl bg-white p-4 z-20 absolute top-0 left-0 h-14" href="#results" title="Skip navigation links">Skip to content</a>
 <header class="grid-area-header z-10 h-14 fixed w-full top-0 print:hidden">
 <div class="bg-gray-dark shadow-md flex items-center h-full xl:px-2 relative"><div class="flex items-center">
 <button class="xl:hidden h-14 w-14 leading-14 text-gray-100 hover:bg-gray-700 hover:text-brand focus:outline-none focus:bg-gray-700 focus:text-brand" data-action="sidebar#open" data-sidebar-target="hamburger">
@@ -38,9 +38,15 @@
 <li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html">Installation</a></div><ul>
 <li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#local">Local</a></div><ul>
 <li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#quick-start">Quick start</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#linux">Linux</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#macos">MacOS</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#docker">Docker</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#id1">Installation</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#install-environment-and-deepfri">1. Install environment and DeepFRI</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#retrieve-deepfri-model-weights">2. Retrieve <code class="docutils literal notranslate">DeepFRI</code> model weights</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#cpu-weights">CPU weights</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#gpu-weights">GPU weights</a></div></li>
 </ul>
 </li>
 </ul>
@@ -55,14 +61,13 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Using Metagenomic-DeepFRI</span></p>
 <ul class="current">
-<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="usage.html">How the pipeline works</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="usage.html#projects">Projects</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="usage.html#tasks-and-timestamps">Tasks and timestamps</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="usage.html#set-up-database">Set up database</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="usage.html#running-the-main-pipeline">Running the main pipeline</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="usage.html">Usage</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="usage.html#prepare-database">1. Prepare database</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="usage.html#predict-protein-function">2. Predict protein function</a></div></li>
 </ul>
 </li>
-<li class="toctree-l1 current expanded"><div class="nav-link"><a class="current reference internal" data-action="click-&gt;sidebar#close" href="#">Output</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="usage.html#available-parameters">Available parameters</a></div></li>
+<li class="toctree-l1 current expanded"><div class="nav-link"><a class="current reference internal" data-action="click-&gt;sidebar#close" href="#">Results</a></div></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Use cases</span></p>
 <ul>
@@ -90,19 +95,19 @@
 </aside>
 <main class="px-4 pt-14 xl:ml-fluid grid-area-main overflow-y-auto flex flex-col flex-1 h-full mx-0 md:mx-auto xl:mr-0"><nav aria-label="breadcrumbs" class="print:hidden mt-12 text-sm text-gray-light" role="navigation">
 <a class="text-gray-light text-sm hover:text-gray-dark font-medium focus:text-gray-dark" href="index.html">Metagenomic-DeepFRI 1.0 documentation</a>
-<span class="mr-1">/</span><span aria-current="page">Output</span>
+<span class="mr-1">/</span><span aria-current="page">Results</span>
 </nav>
 <article class="flex-1" role="main">
-<section id="output">
-<h1>Output<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#output">¶</a></h1>
-<p>Output folder <code class="docutils literal notranslate">FINISHED_PATH / project_name / timestamp</code> will contain:</p>
-<ol class="arabic simple">
+<section id="results">
+<h1>Results<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#results">¶</a></h1>
+<p>Finished folder will contain:</p>
+<ol class="arabic">
 <li><p><code class="docutils literal notranslate">query_files/*</code> - directory containing all input query files.</p></li>
-<li><p><code class="docutils literal notranslate">mmseqs2_search_results.m8</code></p></li>
+<li><p><code class="docutils literal notranslate">mmseqs2_search_results.m8</code> - MMseqs2 search results.</p></li>
 <li><p><code class="docutils literal notranslate">alignments.json</code> - results of alignment search implemented in <code class="docutils literal notranslate">utils.search_alignments.py</code></p></li>
-<li><p><code class="docutils literal notranslate">metadata*</code> - files containing useful information.</p></li>
-<li><p><code class="docutils literal notranslate">results*</code> - multiple DeepFRI outputs. Organized by model type <code class="docutils literal notranslate">['GCN', 'CNN']</code> and its mode <code class="docutils literal notranslate">['mf', 'bp', 'cc', 'ec']</code> - 8 files in total.</p></li>
-</ol>
+<li><p><code class="docutils literal notranslate">metadata*</code> - files with some useful info.</p></li>
+<li><p><code class="docutils literal notranslate">results*</code> - multiple files from DeepFRI. Organized by model type [‘GCN’ / ‘CNN’] and its mode [‘mf’, ‘bp’, ‘cc’, ‘ec’] for the total of 8 files.
+Sometimes results from one model can be missing which means that all query proteins sequences were aligned correctly or none of them were aligned.</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
 <span class="code-lang">default</span></div>
@@ -111,7 +116,8 @@
 <span class="n">cc</span> <span class="o">=</span> <span class="n">cellular_component</span>
 <span class="n">ec</span> <span class="o">=</span> <span class="n">enzyme_commission</span>
 </code></pre></div></div>
-<p>Missing results from one model mean that all query protein sequences were aligned correctly or none of them were aligned.</p>
+</li>
+</ol>
 </section>
 </article>
 <footer>

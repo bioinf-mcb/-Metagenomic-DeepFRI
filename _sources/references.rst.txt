@@ -31,7 +31,7 @@ References
    :widths: 100
    :header-rows: 0
 
-   * - Maranga M, et al. 2022. `Comprehensive function annotation of metagenomes and microbial genomes using a deep learning-based method <https://www.biorxiv.org/content/10.1101/2022.06.06.494653v1>`_. *bioRxiv*.
+   * - Maranga M, et al. 2022. `Comprehensive function annotation of metagenomes and microbial genomes using a deep learning-based method <https://doi.org/10.1128/msystems.01178-22>`_. *mSystems*, 2023.
 
 
 **Metagenomic-DeepFRI is dependent on:**

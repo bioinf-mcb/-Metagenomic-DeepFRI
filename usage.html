@@ -6,17 +6,17 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta charset="utf-8"/>
 <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
-<title>How the pipeline works | Metagenomic-DeepFRI 1.0 documentation</title>
+<title>Usage | Metagenomic-DeepFRI 1.0 documentation</title>
 <link href="_static/pygments.css" rel="stylesheet"/>
 <link href="_static/theme.9297a650d9dd3016d913.css" rel="stylesheet"/>
 <link href="search.html" rel="search" title="Search"/>
 <link href="genindex.html" rel="index" title="Index"/>
-<link href="output.html" rel="next" title="Output"/>
+<link href="output.html" rel="next" title="Results"/>
 <link href="deepfri.html" rel="prev" title="What is DeepFRI?"/>
 </head>
 <body class="antialiased text-gray scroll-smooth">
 <div class="min-h-screen xl:h-screen flex flex-col xl:grid xl:grid-layout print:block print:h-auto" data-action="keydown@window-&gt;search#focus " data-controller="sidebar search " id="page">
-<a class="block transition -translate-x-full focus:translate-x-0 opacity-0 focus:opacity-100 text-xl bg-white p-4 z-20 absolute top-0 left-0 h-14" href="#how-the-pipeline-works" title="Skip navigation links">Skip to content</a>
+<a class="block transition -translate-x-full focus:translate-x-0 opacity-0 focus:opacity-100 text-xl bg-white p-4 z-20 absolute top-0 left-0 h-14" href="#usage" title="Skip navigation links">Skip to content</a>
 <header class="grid-area-header z-10 h-14 fixed w-full top-0 print:hidden">
 <div class="bg-gray-dark shadow-md flex items-center h-full xl:px-2 relative"><div class="flex items-center">
 <button class="xl:hidden h-14 w-14 leading-14 text-gray-100 hover:bg-gray-700 hover:text-brand focus:outline-none focus:bg-gray-700 focus:text-brand" data-action="sidebar#open" data-sidebar-target="hamburger">
@@ -38,9 +38,15 @@
 <li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html">Installation</a></div><ul>
 <li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#local">Local</a></div><ul>
 <li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#quick-start">Quick start</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#linux">Linux</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#macos">MacOS</a></div></li>
-<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#docker">Docker</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#id1">Installation</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#install-environment-and-deepfri">1. Install environment and DeepFRI</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#retrieve-deepfri-model-weights">2. Retrieve <code class="docutils literal notranslate">DeepFRI</code> model weights</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#cpu-weights">CPU weights</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="installation.html#gpu-weights">GPU weights</a></div></li>
 </ul>
 </li>
 </ul>
@@ -55,14 +61,13 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Using Metagenomic-DeepFRI</span></p>
 <ul class="current">
-<li class="toctree-l1 current expanded"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="current reference internal" data-action="click-&gt;sidebar#close" href="#">How the pipeline works</a></div><ul>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#projects">Projects</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#tasks-and-timestamps">Tasks and timestamps</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#set-up-database">Set up database</a></div></li>
-<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#running-the-main-pipeline">Running the main pipeline</a></div></li>
+<li class="toctree-l1 current expanded"><div class="nav-link"><svg class="expand" data-action="click-&gt;sidebar#expand keydown-&gt;sidebar#expandKeyPressed" tabindex="0" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="current reference internal" data-action="click-&gt;sidebar#close" href="#">Usage</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#prepare-database">1. Prepare database</a></div></li>
+<li class="toctree-l2"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#predict-protein-function">2. Predict protein function</a></div></li>
 </ul>
 </li>
-<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="output.html">Output</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="#available-parameters">Available parameters</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" data-action="click-&gt;sidebar#close" href="output.html">Results</a></div></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Use cases</span></p>
 <ul>
@@ -90,87 +95,112 @@
 </aside>
 <main class="px-4 pt-14 xl:ml-fluid grid-area-main overflow-y-auto flex flex-col flex-1 h-full mx-0 md:mx-auto xl:mr-0"><nav aria-label="breadcrumbs" class="print:hidden mt-12 text-sm text-gray-light" role="navigation">
 <a class="text-gray-light text-sm hover:text-gray-dark font-medium focus:text-gray-dark" href="index.html">Metagenomic-DeepFRI 1.0 documentation</a>
-<span class="mr-1">/</span><span aria-current="page">How the pipeline works</span>
+<span class="mr-1">/</span><span aria-current="page">Usage</span>
 </nav>
 <article class="flex-1" role="main">
-<section id="how-the-pipeline-works">
-<h1>How the pipeline works<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#how-the-pipeline-works">¶</a></h1>
-<p>The main feature of this project is the ability to generate a query contact map on the run
-using results from <code class="docutils literal notranslate">mmseqs2</code> target database search for similar protein sequences within known structures. In <code class="docutils literal notranslate">metagenomic_deepfri.py</code> contact map alignment (implemented in CPP_lib/load_contact_maps.h) is performed to be later used as an input to DeepFRI GCN.</p>
-<p>A pipeline is built around following folder structure:</p>
-<div class="code-wrapper" data-controller="code">
-<div class="code-header">
-<span class="code-lang">python</span></div>
-<div class="highlight"><pre><code><span class="n">DATA_ROOT</span> <span class="o">=</span> <span class="n">data_root</span>
-<span class="c1"># pipeline folders</span>
-<span class="n">STRUCTURE_FILES_PATH</span> <span class="o">=</span> <span class="n">data_root</span> <span class="o">/</span> <span class="s2">"structure_files"</span>
-<span class="n">QUERY_PATH</span> <span class="o">=</span> <span class="n">data_root</span> <span class="o">/</span> <span class="s2">"query"</span>
-<span class="n">WORK_PATH</span> <span class="o">=</span> <span class="n">data_root</span> <span class="o">/</span> <span class="s2">"workspace"</span>
-<span class="n">FINISHED_PATH</span> <span class="o">=</span> <span class="n">data_root</span> <span class="o">/</span> <span class="s2">"finished"</span>
-
-<span class="c1"># database folders</span>
-<span class="n">SEQ_ATOMS_DATASET_PATH</span> <span class="o">=</span> <span class="n">data_root</span> <span class="o">/</span> <span class="s2">"seq_atoms_dataset"</span>
-<span class="n">MMSEQS_DATABASES_PATH</span> <span class="o">=</span> <span class="n">data_root</span> <span class="o">/</span> <span class="s2">"mmseqs_db"</span>
-
-<span class="c1"># deepfri config file path</span>
-<span class="n">DEEPFRI_MODEL_WEIGHTS_JSON_FILE</span> <span class="o">=</span> <span class="n">data_root</span> <span class="o">/</span> <span class="s2">"trained_models/model_config.json"</span>
-</code></pre></div></div>
-<section id="projects">
-<h2>Projects<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#projects">¶</a></h2>
-<p>Project is a basic unit of workflow. It helps to avoid confusion from multiple pipeline runs.</p>
-<p>Multiple users can have their separate <strong>projects</strong> - subdirectories inside <code class="docutils literal notranslate">STRUCTURE_FILES_PATH</code>, <code class="docutils literal notranslate">QUERY_PATH</code>, <code class="docutils literal notranslate">WORK_PATH</code> and <code class="docutils literal notranslate">FINISHED_PATH</code>. This allows to avoid set up of multiple databases locally, as they require a lot of physical memory.
-You can execute <code class="docutils literal notranslate">main_pipeline.py</code> or <code class="docutils literal notranslate">update_target_mmseqs_database.py</code> with <code class="docutils literal notranslate">--project_name</code> to easily control the files it works with.</p>
-<p><strong>Without specifying <code class="docutils literal notranslate">--project_name</code> pipeline will use <code class="docutils literal notranslate">default</code> as a project name.</strong></p>
-</section>
-<section id="tasks-and-timestamps">
-<h2>Tasks and timestamps<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#tasks-and-timestamps">¶</a></h2>
-<p>The task is a single run of <code class="docutils literal notranslate">main_pipeline.py</code>. The task name is the timestamp at the beginning of the script run. Its path is <code class="docutils literal notranslate">WORK_PATH / project_name / timestamp</code>. After completion, results will be stored in <code class="docutils literal notranslate">FINISHED_PATH / project_name / timestamp</code>.</p>
-<p>When running <code class="docutils literal notranslate">main_pipeline.py</code> with a new project name, the current state of <code class="docutils literal notranslate">CONFIG / RUNTIME_PARAMETERS.py</code> will be saved in <code class="docutils literal notranslate">WORK_PATH / project_name / project_config.json</code> and will be used in all upcoming tasks in this project.</p>
-</section>
-<section id="set-up-database">
-<h2>Set up database<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#set-up-database">¶</a></h2>
-<p><strong>Create a new database:</strong></p>
+<section id="usage">
+<h1>Usage<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#usage">¶</a></h1>
+<section id="prepare-database">
+<h2>1. Prepare database<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#prepare-database">¶</a></h2>
 <ol class="arabic">
-<li><p>Upload structure files to <code class="docutils literal notranslate">STRUCTURE_FILES_PATH / your_project_name</code>.</p></li>
-<li><p>Run <code class="docutils literal notranslate">update_target_mmseqs_database.py</code> script.</p>
+<li><p>Upload structure (<code class="docutils literal notranslate">.pdb</code> or <code class="docutils literal notranslate">.mmcif</code>, can be gzipped) files to a folder in your system.</p></li>
+<li><p>Run command:</p>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
-<span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>python<span class="w"> </span>update_target_mmseqs_database.py<span class="w"> </span>--project_name<span class="w"> </span>your_project_name
+<span class="code-lang">default</span></div>
+<div class="highlight"><pre><code><span class="n">deepfri_db_build</span> <span class="o">--</span><span class="nb">input</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">folder</span><span class="o">/</span><span class="k">with</span><span class="o">/</span><span class="n">strucures</span> <span class="o">--</span><span class="n">output</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">database</span>
 </code></pre></div></div>
 </li>
 </ol>
-<p>The script will search for structure files, process them and store protein chain sequence and atoms positions inside <code class="docutils literal notranslate">SEQ_ATOMS_DATASET_PATH / project_name</code>.
-It will also create a <code class="docutils literal notranslate">mmseqs2</code> database in <code class="docutils literal notranslate">MMSEQS_DATABASES_PATH / project_name</code>. If the script is run for the second time it will append new structures to existing ones, creating a new folder named as a timestep. It would also store a <code class="docutils literal notranslate">MAX_TARGET_CHAIN_LENGTH</code> parameter inside <code class="docutils literal notranslate">target_db_config.json</code>.</p>
-<p>Use <code class="docutils literal notranslate">--input DIR_1 FILE_2 ...</code> argument list to parse structures from multiple sources. It accepts both absolute and relative <code class="docutils literal notranslate">STRUCTURE_FILES_PATH</code> paths.
-Use <code class="docutils literal notranslate">--input .</code> to parse all structure files inside <code class="docutils literal notranslate">STRUCTURE_FILES_PATH</code>.
-Accepted formats are: <code class="docutils literal notranslate">[".pdb", ".cif", ".ent"]</code> both raw and compressed <code class="docutils literal notranslate">".gz"</code></p>
-<p>To add another structure file format edit <code class="docutils literal notranslate">STRUCTURE_FILES_PARSERS</code> inside <code class="docutils literal notranslate">update_target_mmseqs_database.py</code></p>
+<p><strong>Tip:</strong> building a database from AF20Swissprot (~550k predicted structures) on 32 CPU cores took ~30 min.</p>
+<p>Use parameter <code class="docutils literal notranslate">-max_len</code> to define maximal length of the protein. Due to initial DeepFRI training set default value is set to <code class="docutils literal notranslate">1000</code>.</p>
+<p>Main feature of this project is its ability to generate query contact map on the fly
+using results from mmseqs2 target database search for similar protein sequences with known structures.
+Later in the <code class="docutils literal notranslate">metagenomic_deepfri.py</code> contact map alignment is performed to use it as input to DeepFRI GCN.
+(implemented in CPP_lib/load_contact_maps.h)</p>
+<p>The command will search for structure files,
+process them and store protein sequence and atoms positions inside <code class="docutils literal notranslate">database/seq_atom_db</code>.
+It will also create a mmseqs2 database within <code class="docutils literal notranslate">database/</code>.</p>
+<p>You can also use <code class="docutils literal notranslate">--input DIR_1 FILE_2 ...</code> argument list to parse structures from multiple sources.</p>
 <p>Protein ID is used as a filename. A new protein whose ID already exists in the database will be skipped.
-Use <code class="docutils literal notranslate">--overwrite</code> flag to overwrite existing sequences and atoms positions.
-Use this argument if you want to apply changes to <code class="docutils literal notranslate">MAX_TARGET_CHAIN_LENGTH</code> inside <code class="docutils literal notranslate">target_db_config.json</code></p>
+Use <code class="docutils literal notranslate">--overwrite</code> flag to overwrite existing sequences and atoms positions.</p>
 </section>
-<section id="running-the-main-pipeline">
-<h2>Running the main pipeline<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#running-the-main-pipeline">¶</a></h2>
-<ol class="arabic">
-<li><p>Upload <code class="docutils literal notranslate">.faa</code> files into <code class="docutils literal notranslate">QUERY_PATH / your_project_name</code> (default <code class="docutils literal notranslate">project_name</code> is <code class="docutils literal notranslate">default</code>)</p></li>
-<li><p>Run main_pipeline.py</p>
+<section id="predict-protein-function">
+<h2>2. Predict protein function<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#predict-protein-function">¶</a></h2>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
-<span class="code-lang">bash</span></div>
-<div class="highlight"><pre><code>python<span class="w"> </span>main_pipeline.py<span class="w"> </span>--project_name<span class="w"> </span>your_project_name
+<span class="code-lang">default</span></div>
+<div class="highlight"><pre><code><span class="n">deepfri</span> <span class="o">-</span><span class="n">i</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">protein</span><span class="o">/</span><span class="n">sequences</span> <span class="o">-</span><span class="n">db</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">database</span><span class="o">/</span><span class="n">folder</span><span class="o">/</span><span class="n">from</span><span class="o">/</span><span class="n">previous</span><span class="o">/</span><span class="n">step</span> <span class="o">-</span><span class="n">w</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">deepfri</span><span class="o">/</span><span class="n">weights</span><span class="o">/</span><span class="n">folder</span> <span class="o">-</span><span class="n">o</span> <span class="o">/</span><span class="n">output_path</span>
 </code></pre></div></div>
-</li>
-<li><p>Collect results from <code class="docutils literal notranslate">FINISHED_PATH / your_project_name / timestamp</code></p></li>
-</ol>
-<p>The pipeline will attempt to use <code class="docutils literal notranslate">project_name</code> target database name. If it’s missing, the default target database will be used instead.
-If you want to use another target database, use its name (project_name used during database creation) in <code class="docutils literal notranslate">--target_db_name</code>.</p>
-<p>Use <code class="docutils literal notranslate">--input DIR_1 FILE_2 ...</code> argument list to process query <code class="docutils literal notranslate">.faa</code> files from multiple sources.
-Both absolute and relative to <code class="docutils literal notranslate">QUERY_PATH</code>.
-Use <code class="docutils literal notranslate">--input .</code> to process all query <code class="docutils literal notranslate">.faa</code> files inside <code class="docutils literal notranslate">QUERY_PATH</code>.</p>
-<p><code class="docutils literal notranslate">--delete_query</code> Use this flag so that source query files are deleted from input paths after being copied to the project workspace.</p>
-<p><code class="docutils literal notranslate">--n_parallel_jobs</code> will divide query protein sequences evenly across all jobs.</p>
+<p><strong>Attention:</strong> Single instance of DeepFRI on GPU requires 10GB VRAM.
+Other available parameters can be found upon command <code class="docutils literal notranslate">deepfri --help</code>.</p>
 </section>
+</section>
+<section id="available-parameters">
+<h1>Available parameters<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#available-parameters">¶</a></h1>
+<p>.. list-table::
+:widths: 25 25 50
+:header-rows: 1</p>
+<ul class="simple">
+<li><ul>
+<li><p>Parameter</p></li>
+<li><p>Description</p></li>
+<li><p>Default value</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate">--processing_modes</code></p></li>
+<li><p>DeepFRI prediction mode.
+mf = molecular_function
+bp = biological_process
+cc = cellular_component
+ec = enzyme_commission</p></li>
+<li><p><code class="docutils literal notranslate">mf,bp,cc,ec</code></p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate">--angstrom_contact_thresh</code></p></li>
+<li><p>Angstrom contact threshold.</p></li>
+<li><p>6</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate">--generate_contacts</code></p></li>
+<li><p>Gap fill during contact map alignment.</p></li>
+<li><p>2</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate">--mmseqs_min_bit_score</code></p></li>
+<li><p>Minimum bit score for MMSeqs2 search.</p></li>
+<li><p>None</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate">--mmseqs_max_evalue</code></p></li>
+<li><p>Maximum e-value for MMSeqs2 search.</p></li>
+<li><p>None</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate">--mmseqs_min_identity</code></p></li>
+<li><p>Minimum sequence identity for MMSeqs2 search.</p></li>
+<li><p>0.5</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate">--mmseqs_min_bit_score</code></p></li>
+<li><p>Minimum bit score for MMSeqs2 search.</p></li>
+<li><p>None</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate">--threads</code></p></li>
+<li><p>Number of threads to use for parallel processing.</p></li>
+<li><p>1</p></li>
+</ul>
+</li>
+</ul>
 </section>
 </article>
 <footer>
