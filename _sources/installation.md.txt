@@ -1,15 +1,4 @@
 # Installation
-## Local
-
-### Quick start
-
-**Requirements:**
-
-1. Python >= 3.9
-2. Git
-
-
-# Installation
 
 ## 1. Install environment and DeepFRI
 
