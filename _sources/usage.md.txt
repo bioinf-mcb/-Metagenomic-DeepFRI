@@ -54,7 +54,7 @@ Other available parameters can be found upon command `deepfri --help`.
    * - `--generate_contacts`
      - Gap fill during contact map alignment.
      - 2
-   * - `--mmseqs_min_bit_score`
+   * - `--mmseqs_min_bitscore`
      - Minimum bit score for MMSeqs2 search.
      - None
    * - `--mmseqs_max_evalue`
@@ -63,7 +63,7 @@ Other available parameters can be found upon command `deepfri --help`.
    * - `--mmseqs_min_identity`
      - Minimum sequence identity for MMSeqs2 search.
      - 0.5
-   * - `--mmseqs_min_bit_score`
+   * - `--mmseqs_min_bitscore`
      - Minimum bit score for MMSeqs2 search.
      - None
    * - `--threads`
