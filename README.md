@@ -13,6 +13,10 @@
 
 *A pipeline for annotation of genes with [DeepFRI](https://github.com/flatironinstitute/DeepFRI), a deep learning model for functional protein annotation with [Gene Ontology (GO) terms](https://geneontology.org/docs/go-annotations/). It incorporates [FoldComp](https://github.com/steineggerlab/foldcomp) databases of predicted protein structures for fast annotation of metagenomic gene catalogues.*
 
+## Python requirements
+Python >= 3.9; < 3.12
+The app was tested for 3.11.
+
 ## 🔍 Overview
 Proteins perform most of the work of living cells. Amino acid sequence and structural features of proteins determine a wide range of functions: from binding specificity and conferring mechanical stability, to catalysis of biochemical reactions, transport, and signal transduction.
 DeepFRI is a neural network designed to predict protein function within the framework of the Gene Ontology (GO). The exponential growth in the number of available protein sequences, driven by advancements in low-cost sequencing technologies and computational methods (e.g. gene prediction), has resulted in a pressing need for efficient software to facilitate the annotation of protein databases.
